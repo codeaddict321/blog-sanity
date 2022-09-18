@@ -36,8 +36,8 @@ img {
 }
 
 .my-text > h2 {
-  font-size: 2.2rem;
-  margin-block: 1.6rem 0.5rem;
+  font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+  margin-block: 2rem 0;
   line-height: 1.1;
 }
 .my-text > p {
