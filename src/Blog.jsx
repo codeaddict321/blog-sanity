@@ -3,6 +3,8 @@ import client from "./client";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PortableText } from "@portabletext/react";
+import loadingImg from "./assets/loading.png";
+
 export default function Blog() {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -65,7 +67,7 @@ export default function Blog() {
       <div className="mycontainer">
         {isLoading ? (
           <div id="loading-container">
-            <img id="loading-img" src="/loading.png" alt="" />
+            <img id="loading-img" src={loadingImg} alt="" />
           </div>
         ) : (
           posts.length > 0 && (
@@ -74,7 +76,7 @@ export default function Blog() {
                 return (
                   <li
                     id="blog-container"
-                    className="bg-white relative  rounded-lg   mx-auto w-full pb-12"
+                    className="bg-white relative  rounded-lg   mx-auto  w-full pb-12"
                     key={
                       `${post.slug.curent}` == "undefined"
                         ? index
@@ -90,7 +92,9 @@ export default function Blog() {
                             alt="img"
                           />
                           <div className="px-4 pb-4 pt-1">
-                            <h2 className="text-2xl font-bold">{post.title}</h2>
+                            <h2 className="text-2xl font-bold my-3">
+                              {post.title}
+                            </h2>
 
                             <Content bodynew={post.body} />
                             <div className="flex items-center mt-auto gap-1.5 absolute bottom-3">

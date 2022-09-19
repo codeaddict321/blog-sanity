@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Blog from "./Blog";
+
 import Home from "./Home";
 import SinglePost from "./SinglePost";
 import "./App.css";
@@ -9,7 +9,7 @@ function App() {
     <>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Blog />} />
+        <Route path="/" element={<Home />} />
         <Route path="/blog:slug" element={<SinglePost />} />
       </Routes>
     </>

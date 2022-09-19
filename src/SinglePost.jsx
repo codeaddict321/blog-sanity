@@ -4,7 +4,7 @@ import client from "./client";
 import { useState, useEffect } from "react";
 import { PortableText } from "@portabletext/react";
 import imageUrlBuilder from "@sanity/image-url";
-
+import loadingImg from "./assets/loading.png";
 export default function SinglePost() {
   const builder = imageUrlBuilder(client);
   function urlFor(source) {
@@ -52,11 +52,11 @@ export default function SinglePost() {
     <div>
       {isLoading ? (
         <div id="loading-container">
-          <img id="loading-img" src="/loading.png" alt="" />
+          <img id="loading-img" src={loadingImg} alt="" />
         </div>
       ) : (
         <section>
-          <div className="blog-container  mycontainer   bg-white py-12 px-4 sm:px-8">
+          <div className="blog-container  mycontainer    bg-white py-12 px-4 sm:px-8">
             <h2 className="text-3xl md:text-5xl text-gray-900 text-center mb-4">
               {post.title}
             </h2>
